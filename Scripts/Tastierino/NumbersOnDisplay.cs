@@ -13,7 +13,8 @@ public class NumbersOnDisplay : MonoBehaviour
 
     public Light luceStanza1;
 
-    //public AudioSource avviso;
+    [SerializeField] private AudioClip avviso;
+    private AudioSource audioSource;
 
     void Awake()
     {
@@ -23,7 +24,7 @@ public class NumbersOnDisplay : MonoBehaviour
     void Start()
     {
        luceStanza1.intensity = 0;
-       //avviso.Play();
+       audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,6 +47,11 @@ public class NumbersOnDisplay : MonoBehaviour
         {
             codice = codice + valore;
             testo.text = codice;
+
+            if(codice.Equals("90091")){
+                audioSource.clip = avviso;
+                audioSource.Play();
+            }
         }
         
     }
