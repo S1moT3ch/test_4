@@ -2816,7 +2816,6 @@ GameObject:
   - component: {fileID: 1668642204}
   - component: {fileID: 1668642206}
   - component: {fileID: 1668642205}
-  - component: {fileID: 1668642207}
   m_Layer: 0
   m_Name: Square3
   m_TagString: Untagged
@@ -2915,19 +2914,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1668642207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668642203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecdd2914eb7da304b8b19fe6acf617a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laser: {fileID: 440202385}
 --- !u!1 &1850752825
 GameObject:
   m_ObjectHideFlags: 0
