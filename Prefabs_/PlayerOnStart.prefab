@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3797474275326724699}
   - component: {fileID: 8672357842665178211}
   - component: {fileID: 6037766379682897533}
+  - component: {fileID: 8692853078432372349}
   m_Layer: 0
   m_Name: PlayerCam
   m_TagString: Untagged
@@ -202,6 +203,20 @@ MonoBehaviour:
   holdPos: {fileID: 4875133544066359903}
   throwForce: 500
   pickUpRange: 5
+--- !u!114 &8692853078432372349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214117162582909153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b04c7c16d3dfa469126cceeef5fe34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpRange: 50
+  isMonitor: 0
 --- !u!1 &318450460021168961
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +423,7 @@ GameObject:
   - component: {fileID: 3500548493560555455}
   - component: {fileID: 3804457540569191916}
   - component: {fileID: 946318401518347310}
+  - component: {fileID: 6080195901168166506}
   m_Layer: 0
   m_Name: PlayerOnStart
   m_TagString: Untagged
@@ -571,6 +587,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e34533e69db9ff47b006e3ee5709e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6080195901168166506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159263930442317983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea210803813ca8f4daaf6082c0b93e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1358288255975202882

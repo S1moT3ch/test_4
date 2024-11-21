@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        if(Input.GetKey(jumpKey) && readyToJump && grounded && PlayerMonitor.istance.isMonitor == false)
         {
             readyToJump = false;
             
@@ -77,13 +77,24 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection =orientation.forward*verticalInput + orientation.right * horizontalInput;
-        
-        if(grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        if (PlayerMonitor.istance.isMonitor)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+        }
+        else
+        {
+            Debug.Log("movimento");
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
+            rb.freezeRotation = true;
+            
+            if(grounded)
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
-        else if (!grounded)
-             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * jumpForce, ForceMode.Force);
-
+            else if (!grounded)
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f * jumpForce, ForceMode.Force);
+        }
     }
 
     private void Jump()
