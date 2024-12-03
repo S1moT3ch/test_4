@@ -14,7 +14,7 @@ public class ColliderMatt : MonoBehaviour
         else
         {
         Debug.Log("Hit with Collider");
-        laser.transform.position = laser.transform.position + new Vector3(passo, 0, 0);
+        laser.transform.position = laser.transform.position + new Vector3(0, 0, passo);
         }
     }
 }

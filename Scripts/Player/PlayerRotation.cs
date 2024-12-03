@@ -18,10 +18,17 @@ public class PlayerRotation : MonoBehaviour
     
     private void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime *sensX;
+        if(ChatView.istance.isShowing)
+        {
+            Debug.Log("chat aperta");
+        }
+        else
+        {
+            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime *sensX;
 
-        yRotation += mouseX;
+            yRotation += mouseX;
         
-        transform.rotation = Quaternion.Euler(0, yRotation, 0);
+            transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
     }
 }

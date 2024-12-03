@@ -23,5 +23,6 @@ public class P1 : MonoBehaviour
 
     void OnMouseDown(){
         clickOn = true;
+        Debug.Log("Pezzo 1 terra click");
     }
 }

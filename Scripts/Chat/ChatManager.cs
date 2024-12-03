@@ -7,6 +7,7 @@ using TMPro;
 public class ChatManager : NetworkBehaviour
 {
     public static ChatManager Singleton;
+    string pezzo;
 
     [SerializeField] ChatMessage chatMessagePrefab;
     [SerializeField] CanvasGroup chatContent;
@@ -24,13 +25,22 @@ public class ChatManager : NetworkBehaviour
             SendChatMessage(chatInput.text, playerName);
             chatInput.text = "";
         }
+        else if (Input.GetKeyDown(KeyCode.F3))
+        {
+            SendTetrisPiece(PickUpTetrisPlayer.istance.pezzopassato);
+        }
     }
 
     public void SendChatMessage(string _message, string _fromWho = null)
     { 
         if(string.IsNullOrWhiteSpace(_message)) return;
-
+        
         string S = _fromWho + " > " +  _message;
+        SendChatMessageServerRpc(S); 
+    }
+    public void SendTetrisPiece(string _message)
+    {
+        string S = _message;
         SendChatMessageServerRpc(S); 
     }
    
@@ -38,6 +48,10 @@ public class ChatManager : NetworkBehaviour
     {
         ChatMessage CM = Instantiate(chatMessagePrefab, chatContent.transform);
         CM.SetText(msg);
+        if(msg.Equals("p3"))
+        {
+            Remote.istance.pezzoricevuto = "p3";
+        }
     }
 
     [ServerRpc(RequireOwnership = false)]

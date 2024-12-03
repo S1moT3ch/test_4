@@ -12,7 +12,7 @@ public class PauseButton : MonoBehaviour {
     public EventSystem eventSystemPlay;
     private bool isShowing = false;
 
-    public void Start()
+    void Start()
     {
         pauseStart.SetActive(false);
     }

@@ -8,6 +8,14 @@ public class MoveCamera : MonoBehaviour
 
     private void Update()
     {
-        transform.position = cameraPosition.position;
+        if(ChatView.istance.isShowing)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+        }
+        else
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            transform.position = cameraPosition.position;
+        }
     }
 }

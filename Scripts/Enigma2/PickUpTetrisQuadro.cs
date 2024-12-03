@@ -34,53 +34,65 @@ public class PickUpTetrisQuadro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (qP1.istance.clickOn)
+        if (qP1.istance.clickOnQ)
         {
             qp1.SetActive(true);
+            qP1.istance.clickOnQ = false;
         }
-        else if (qP2.istance.clickOn)
+        else if (qP2.istance.clickOnQ)
         {
             qp2.SetActive(true);
+            qP2.istance.clickOnQ = false;
         }
-        else if (qP3.istance.clickOn)
+        else if (qP3.istance.clickOnQ)
         {
             qp3.SetActive(true);
+            qP3.istance.clickOnQ = false;
         }
-        else if (qP4.istance.clickOn)
+        else if (qP4.istance.clickOnQ)
         {
             qp4.SetActive(true);
+            qP4.istance.clickOnQ = false;
         }
-        else if (qP5.istance.clickOn)
+        else if (qP5.istance.clickOnQ)
         {
             qp5.SetActive(true);
+            qP5.istance.clickOnQ = false;
         }
-        else if (qP6.istance.clickOn)
+        else if (qP6.istance.clickOnQ)
         {
             qp6.SetActive(true);
+            qP6.istance.clickOnQ = false;
         }
-        else if (qP7.istance.clickOn)
+        else if (qP7.istance.clickOnQ)
         {
             qp7.SetActive(true);
+            qP7.istance.clickOnQ = false;
         }
-        else if (qP8.istance.clickOn)
+        else if (qP8.istance.clickOnQ)
         {
             qp8.SetActive(true);
+            qP8.istance.clickOnQ = false;
         }
-        else if (qP9.istance.clickOn)
+        else if (qP9.istance.clickOnQ)
         {
             qp9.SetActive(true);
+            qP9.istance.clickOnQ = false;
         }
-        else if (qP10.istance.clickOn)
+        else if (qP10.istance.clickOnQ)
         {
             qp10.SetActive(true);
+            qP10.istance.clickOnQ = false;
         }
-        else if (qP11.istance.clickOn)
+        else if (qP11.istance.clickOnQ)
         {
             qp11.SetActive(true);
+            qP11.istance.clickOnQ = false;
         }
-        else if (qP12.istance.clickOn)
+        else if (qP12.istance.clickOnQ)
         {
             qp12.SetActive(true);
+            qP12.istance.clickOnQ = false;
         }
     }
 }

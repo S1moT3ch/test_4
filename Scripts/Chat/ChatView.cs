@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 public class ChatView : MonoBehaviour
 {
-    public GameObject canvasChat;
     public bool isShowing = false;
+    public GameObject canvasChat;
     public static ChatView istance;
     
     public void Start()

@@ -77,9 +77,10 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection =orientation.forward*verticalInput + orientation.right * horizontalInput;
-        if (PlayerMonitor.istance.isMonitor)
+        if (PlayerMonitor.istance.isMonitor | ChatView.istance.isShowing)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+            rb.freezeRotation = true;
         }
         else
         {

@@ -3,6 +3,7 @@ using UnityEngine;
 public class qP1 : MonoBehaviour
 {
     public bool clickOn = false;
+    public bool clickOnQ = false;
     public static qP1 istance;
 
     void Awake()
@@ -23,5 +24,7 @@ public class qP1 : MonoBehaviour
 
     void OnMouseDown(){
         clickOn = true;
+        clickOnQ = true;
+        Debug.Log("Pezzo 1 quadro click");
     }
 }

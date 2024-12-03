@@ -12,6 +12,11 @@ public class CanvasHide : MonoBehaviour {
     public EventSystem eventSystemPause;
     private bool isShowing;
 
+    public void Start()
+    {
+
+    }
+
     public void LetsPlay()
     {
         pause.SetActive(true);

@@ -26,10 +26,12 @@ public class PickUpTetris : MonoBehaviour
         if (P1.istance.clickOn)
         {
             tP1.SetActive(false);
+            Debug.Log("Pezzo 1 terra off");
         }
         else if (P2.istance.clickOn)
         {
-            tP1.SetActive(false);
+            tP2.SetActive(false);
+            Debug.Log("Pezzo 2 terra off");
         }
         else if (P3.istance.clickOn)
         {

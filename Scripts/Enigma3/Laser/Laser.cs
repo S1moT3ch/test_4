@@ -14,6 +14,8 @@ public class Laser : MonoBehaviour
     private void Start()
     {
         lineRenderer.positionCount = 2;
+        lineRenderer.enabled = true;
+
     }
 
     private void Update()

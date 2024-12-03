@@ -3,6 +3,7 @@ using UnityEngine;
 public class qP8 : MonoBehaviour
 {
     public bool clickOn = false;
+    public bool clickOnQ = false;
     public static qP8 istance;
 
     void Awake()
@@ -23,5 +24,6 @@ public class qP8 : MonoBehaviour
 
     void OnMouseDown(){
         clickOn = true;
+        clickOnQ = true;
     }
 }

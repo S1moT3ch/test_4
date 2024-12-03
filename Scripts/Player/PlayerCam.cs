@@ -12,6 +12,8 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    Rigidbody rb;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
@@ -21,7 +23,15 @@ public class PlayerCam : MonoBehaviour
     
     private void Update()
     {
+        if(ChatView.istance.isShowing)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+        }
         
+        else
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime *sensX;
             float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
@@ -32,6 +42,7 @@ public class PlayerCam : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
             orientation. rotation = Quaternion.Euler(0, yRotation,0);
+        }
         
     }
 }
