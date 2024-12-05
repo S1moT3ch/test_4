@@ -15,6 +15,12 @@ public class PickUpDKit : MonoBehaviour
         if (DKit.istance.clickOn)
         {
             DNAkit.SetActive(false);
+            DKit.istance.clickOn = false;
+        }
+        else if (DKit2.istance.clickOn)
+        {
+            DNAkit.SetActive(false);
+            DKit.istance.clickOn = false;
         }
     }
 }

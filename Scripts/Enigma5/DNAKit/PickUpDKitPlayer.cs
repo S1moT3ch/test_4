@@ -21,21 +21,25 @@ public class PickUpDKitPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DKit.istance.clickOn)
+        if (DKit.istance.clickOnP)
         {
             pDNAKit.SetActive(true);
-            DKit.istance.clickOn = false;
+            DKit.istance.clickOnP = false;
+        }
+        else if (DKit2.istance.clickOnP)
+        {
+            pDNAKit.SetActive(true);
+            DKit2.istance.clickOnP = false;
+            Debug.Log("kit 2 player on");
         }
 
         if (macchia1.istance.clickOn)
         {
             tampone.SetActive(true);
-            DKit.istance.clickOn = false;
         }
-        if (macchia2.istance.clickOn)
+        else if (macchia2.istance.clickOn)
         {
             tampone.SetActive(true);
-            DKit.istance.clickOn = false;
         }
         if (giraProvette.istance.clickOn)
         {

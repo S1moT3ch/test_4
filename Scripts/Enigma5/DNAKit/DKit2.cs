@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class DKit : MonoBehaviour
+public class DKit2 : MonoBehaviour
 {
     public bool clickOn = false;
     public bool clickOnP = false;
-    public static DKit istance;
+    public static DKit2 istance;
 
     void Awake()
     {

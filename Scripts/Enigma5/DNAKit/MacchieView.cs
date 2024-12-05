@@ -44,7 +44,7 @@ public class MacchieView : MonoBehaviour
             {
                 macchia1.SetActive(true);
             }
-            else if (PlayerDnaKit.istance.isBlood2 == false && OnOffTorcia.istance.on != 1)
+            else if (PlayerDnaKit.istance.isBlood1 == false && OnOffTorcia.istance.on != 1)
             {
                 macchia1.SetActive(false);
             }

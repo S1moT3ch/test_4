@@ -9,12 +9,18 @@ public class NumbersOnMonitor2 : MonoBehaviour
     public string codice;
     public string reset;
     public string valoreb;
+    public GameObject canvasEnd;
 
     public static NumbersOnMonitor2 istance;
 
     void Awake()
     {
         istance=this;
+    }
+
+    void Start()
+    {
+        canvasEnd.SetActive(false);
     }
 
 
@@ -34,6 +40,11 @@ public class NumbersOnMonitor2 : MonoBehaviour
                 codice = codice + valore;
                 valoreb = valore;
                 testo.text = codice;
+
+                if(codice.Equals("testend"))
+                {
+                    canvasEnd.SetActive(true);
+                }
             }
         }
     }

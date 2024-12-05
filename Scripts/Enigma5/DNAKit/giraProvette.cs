@@ -3,6 +3,7 @@ using UnityEngine;
 public class giraProvette : MonoBehaviour
 {
     public bool clickOn = false;
+
     public static giraProvette istance;
 
     void Awake()

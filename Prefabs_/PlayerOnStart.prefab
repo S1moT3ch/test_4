@@ -262,7 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpRange: 100
-  isBlood: 0
+  isBlood1: 0
+  isBlood2: 0
 --- !u!1 &318450460021168961
 GameObject:
   m_ObjectHideFlags: 0
