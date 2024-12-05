@@ -46,11 +46,18 @@ public class ChatManager : NetworkBehaviour
    
     void AddMessage(string msg)
     {
-        ChatMessage CM = Instantiate(chatMessagePrefab, chatContent.transform);
-        CM.SetText(msg);
         if(msg.Equals("p3"))
         {
             Remote.istance.pezzoricevuto = "p3";
+        }
+        else if (msg.Equals("p7"))
+        {
+            Remote.istance.pezzoricevuto = "p7";
+        }
+        else
+        {
+            ChatMessage CM = Instantiate(chatMessagePrefab, chatContent.transform);
+            CM.SetText(msg);
         }
     }
 

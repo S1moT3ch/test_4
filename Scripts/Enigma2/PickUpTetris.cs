@@ -5,10 +5,12 @@ public class PickUpTetris : MonoBehaviour
     public GameObject tP1;
     public GameObject tP2;
     public GameObject tP3;
+    public GameObject rP3;
     public GameObject tP4;
     public GameObject tP5;
     public GameObject tP6;
     public GameObject tP7;
+    public GameObject rP7;
     public GameObject tP8;
     public GameObject tP9;
     public GameObject tP10;
@@ -37,6 +39,11 @@ public class PickUpTetris : MonoBehaviour
         {
             tP3.SetActive(false);
         }
+        else if (Pr3.istance.clickOnT)
+        {
+            rP3.SetActive(false);
+            Debug.Log("Pezzo 3 terra remoto off");
+        }
         else if (P4.istance.clickOn)
         {
             tP4.SetActive(false);
@@ -52,6 +59,10 @@ public class PickUpTetris : MonoBehaviour
         else if (P7.istance.clickOn)
         {
             tP7.SetActive(false);
+        }
+        else if (Pr7.istance.clickOnT)
+        {
+            rP7.SetActive(false);
         }
         else if (P8.istance.clickOn)
         {

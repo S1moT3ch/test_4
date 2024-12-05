@@ -8,5 +8,15 @@ public class ChatMessage : MonoBehaviour
     [SerializeField] TextMeshProUGUI messageText;
 
     public void SetText(string str)
-    { messageText.text = str; }
+    {
+        if (str.Equals("p3") | str.Equals("p7"))
+        {
+            Debug.Log("messaggio di servizio");
+        }
+        else
+        {
+            messageText.text = str; 
+        }
+        
+    }
 }

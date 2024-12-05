@@ -5,16 +5,19 @@ public class PickUpTetrisPlayer : MonoBehaviour
     public GameObject Pp1;
     public GameObject Pp2;
     public GameObject Pp3;
+    public GameObject Ppr3;
     public GameObject Pp4;
     public GameObject Pp5;
     public GameObject Pp6;
     public GameObject Pp7;
+    public GameObject Ppr7;
     public GameObject Pp8;
     public GameObject Pp9;
     public GameObject Pp10;
     public GameObject Pp11;
     public GameObject Pp12;
     public string pezzopassato;
+    public int pezzo;
     public static PickUpTetrisPlayer istance;
 
     void Awake()
@@ -28,10 +31,12 @@ public class PickUpTetrisPlayer : MonoBehaviour
         Pp1.SetActive(false);
         Pp2.SetActive(false);
         Pp3.SetActive(false);
+        Ppr3.SetActive(false);
         Pp4.SetActive(false);
         Pp5.SetActive(false);
         Pp6.SetActive(false);
         Pp7.SetActive(false);
+        Ppr7.SetActive(false);
         Pp8.SetActive(false);
         Pp9.SetActive(false);
         Pp10.SetActive(false);
@@ -45,6 +50,7 @@ public class PickUpTetrisPlayer : MonoBehaviour
         if (P1.istance.clickOn)
         {
             Pp1.SetActive(true);
+            pezzo = 1;
             Debug.Log("Pezzo 1 player on");
             if (qP1.istance.clickOn)
             {
@@ -57,6 +63,7 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P2.istance.clickOn)
         {
             Pp2.SetActive(true);
+            pezzo = 2;
             Debug.Log("Pezzo 2 player on");
             if (qP2.istance.clickOn)
             {
@@ -70,16 +77,29 @@ public class PickUpTetrisPlayer : MonoBehaviour
         {
             Pp3.SetActive(true);
             pezzopassato = "p3";
-            if (qP3.istance.clickOn | Remote.istance.pezzoricevuto.Equals("p3"))
+            
+            if (Remote.istance.pezzoricevuto.Equals("p3"))
             {
                 Pp3.SetActive(false);
                 P3.istance.clickOn = false;
+            }
+        }
+        else if (Pr3.istance.clickOn)
+        {
+            Ppr3.SetActive(true);
+            pezzo = 3;
+            if (qP3.istance.clickOn)
+            {
+                Ppr3.SetActive(false);
+                Pr3.istance.clickOn = false;
+                Pr3.istance.clickOnT = false;
                 qP3.istance.clickOn = false;
             }
         }
         else if (P4.istance.clickOn)
         {
             Pp4.SetActive(true);
+            pezzo = 4;
             if (qP4.istance.clickOn)
             {
                 Pp4.SetActive(false);
@@ -90,6 +110,7 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P5.istance.clickOn)
         {
             Pp5.SetActive(true);
+            pezzo = 5;
             if (qP5.istance.clickOn)
             {
                 Pp5.SetActive(false);
@@ -100,28 +121,41 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P6.istance.clickOn)
         {
             Pp6.SetActive(true);
-            pezzopassato = "p6";
-            if (qP6.istance.clickOn | Remote.istance.pezzoricevuto.Equals("p6"))
+            pezzo = 6;
+            if (qP6.istance.clickOn)
             {
                 Pp6.SetActive(false);
                 P6.istance.clickOn = false;
                 qP6.istance.clickOn = false;
             }
         }
-        else if (P7.istance.clickOn )
+        else if (P7.istance.clickOn)
         {
             Pp7.SetActive(true);
             pezzopassato = "p7";
-            if (qP7.istance.clickOn | Remote.istance.pezzoricevuto.Equals("p7"))
+            
+            if (Remote.istance.pezzoricevuto.Equals("p7"))
             {
                 Pp7.SetActive(false);
                 P7.istance.clickOn = false;
+            }
+        }
+        else if (Pr7.istance.clickOn)
+        {
+            Ppr7.SetActive(true);
+            pezzo = 7;
+            if (qP7.istance.clickOn)
+            {
+                Ppr7.SetActive(false);
+                Pr7.istance.clickOn = false;
+                Pr7.istance.clickOnT = false;
                 qP7.istance.clickOn = false;
             }
         }
         else if (P8.istance.clickOn)
         {
             Pp8.SetActive(true);
+            pezzo = 8;
             if (qP8.istance.clickOn)
             {
                 Pp8.SetActive(false);
@@ -132,6 +166,7 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P9.istance.clickOn)
         {
             Pp9.SetActive(true);
+            pezzo = 9;
             if (qP9.istance.clickOn)
             {
                 Pp9.SetActive(false);
@@ -142,8 +177,8 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P10.istance.clickOn )
         {
             Pp10.SetActive(true);
-            pezzopassato = "p10";
-            if (qP10.istance.clickOn | Remote.istance.pezzoricevuto.Equals("p10"))
+            pezzo = 10;
+            if (qP10.istance.clickOn)
             {
                 Pp10.SetActive(false);
                 P10.istance.clickOn = false;
@@ -153,8 +188,8 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P11.istance.clickOn )
         {
             Pp11.SetActive(true);
-            pezzopassato = "p11";
-            if (qP11.istance.clickOn | Remote.istance.pezzoricevuto.Equals("p11"))
+            
+            if (qP11.istance.clickOn)
             {
                 Pp11.SetActive(false);
                 P11.istance.clickOn = false;
@@ -164,8 +199,7 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P12.istance.clickOn )
         {
             Pp12.SetActive(true);
-            pezzopassato = "p12";
-            if (qP12.istance.clickOn | Remote.istance.pezzoricevuto.Equals("p12"))
+            if (qP12.istance.clickOn)
             {
                 Pp12.SetActive(false);
                 P12.istance.clickOn = false;

@@ -6,20 +6,22 @@ public class Remote : MonoBehaviour
 
     public string pezzoricevuto;
     public GameObject r3;
-    public GameObject r6;
+    private Rigidbody rb3;
     public GameObject r7;
-    public GameObject r10;
-    public GameObject r11;
-    public GameObject r12;
+    private Rigidbody rb7;
+    
 
     void Start()
     {
+        rb3=r3.GetComponent<Rigidbody>();
+        rb7=r7.GetComponent<Rigidbody>();
+        
         r3.SetActive(false);
-        r6.SetActive(false);
         r7.SetActive(false);
-        r10.SetActive(false);
-        r11.SetActive(false);
-        r12.SetActive(false);
+    
+
+        rb3.useGravity = false;
+        rb7.useGravity = false;
     }
     void Awake()
     {
@@ -30,26 +32,12 @@ public class Remote : MonoBehaviour
         if (pezzoricevuto.Equals("p3"))
         {
             r3.SetActive(true);
-        }
-        else if (pezzoricevuto.Equals("p6"))
-        {
-            r6.SetActive(true);
+            rb3.useGravity = true;
         }
         else if (pezzoricevuto.Equals("p7"))
         {
             r7.SetActive(true);
-        }
-        else if (pezzoricevuto.Equals("p10"))
-        {
-            r10.SetActive(true);
-        }
-        else if (pezzoricevuto.Equals("p11"))
-        {
-            r11.SetActive(true);
-        }
-        else if (pezzoricevuto.Equals("p12"))
-        {
-            r12.SetActive(true);
+            rb7.useGravity = true;
         }
     }
 }

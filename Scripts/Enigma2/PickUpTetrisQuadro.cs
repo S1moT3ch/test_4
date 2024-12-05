@@ -34,64 +34,112 @@ public class PickUpTetrisQuadro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (qP1.istance.clickOnQ)
+        if (qP1.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 1)
         {
             qp1.SetActive(true);
             qP1.istance.clickOnQ = false;
         }
-        else if (qP2.istance.clickOnQ)
+        else if (qP1.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 1)
+        {
+            qP1.istance.clickOnQ = false;
+        }
+        else if (qP2.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 2)
         {
             qp2.SetActive(true);
             qP2.istance.clickOnQ = false;
         }
-        else if (qP3.istance.clickOnQ)
+        else if (qP2.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 2)
+        {
+            qP2.istance.clickOnQ = false;
+        }
+        else if (qP3.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 3)
         {
             qp3.SetActive(true);
             qP3.istance.clickOnQ = false;
         }
-        else if (qP4.istance.clickOnQ)
+        else if (qP2.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 3)
+        {
+            qP2.istance.clickOnQ = false;
+        }
+        else if (qP4.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 4)
         {
             qp4.SetActive(true);
             qP4.istance.clickOnQ = false;
         }
-        else if (qP5.istance.clickOnQ)
+        else if (qP4.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 4)
+        {
+            qP4.istance.clickOnQ = false;
+        }
+        else if (qP5.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 5)
         {
             qp5.SetActive(true);
             qP5.istance.clickOnQ = false;
         }
-        else if (qP6.istance.clickOnQ)
+        else if (qP5.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 5)
+        {
+            qP5.istance.clickOnQ = false;
+        }
+        else if (qP6.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 6)
         {
             qp6.SetActive(true);
             qP6.istance.clickOnQ = false;
         }
-        else if (qP7.istance.clickOnQ)
+        else if (qP6.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 6)
+        {
+            qP6.istance.clickOnQ = false;
+        }
+        else if (qP7.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 7)
         {
             qp7.SetActive(true);
             qP7.istance.clickOnQ = false;
         }
-        else if (qP8.istance.clickOnQ)
+        else if (qP7.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 7)
+        {
+            qP7.istance.clickOnQ = false;
+        }
+        else if (qP8.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 8)
         {
             qp8.SetActive(true);
             qP8.istance.clickOnQ = false;
         }
-        else if (qP9.istance.clickOnQ)
+        else if (qP8.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 8)
+        {
+            qP8.istance.clickOnQ = false;
+        }
+        else if (qP9.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 9)
         {
             qp9.SetActive(true);
             qP9.istance.clickOnQ = false;
         }
-        else if (qP10.istance.clickOnQ)
+        else if (qP9.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 9)
+        {
+            qP9.istance.clickOnQ = false;
+        }
+        else if (qP10.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 10)
         {
             qp10.SetActive(true);
             qP10.istance.clickOnQ = false;
         }
-        else if (qP11.istance.clickOnQ)
+        else if (qP10.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 10)
+        {
+            qP10.istance.clickOnQ = false;
+        }
+        else if (qP11.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 11)
         {
             qp11.SetActive(true);
             qP11.istance.clickOnQ = false;
         }
-        else if (qP12.istance.clickOnQ)
+        else if (qP11.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 11)
+        {
+            qP11.istance.clickOnQ = false;
+        }
+        else if (qP12.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo == 12)
         {
             qp12.SetActive(true);
+            qP12.istance.clickOnQ = false;
+        }
+        else if (qP12.istance.clickOnQ && PickUpTetrisPlayer.istance.pezzo != 12)
+        {
             qP12.istance.clickOnQ = false;
         }
     }
