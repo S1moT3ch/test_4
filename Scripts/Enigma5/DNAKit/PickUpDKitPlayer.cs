@@ -3,7 +3,10 @@ using UnityEngine;
 public class PickUpDKitPlayer : MonoBehaviour
 {
     public GameObject pDNAKit;
+    public GameObject pDNAKit2;
+
     public GameObject tampone;
+    public GameObject tampone2;
     public bool isShowing = false;
     public static PickUpDKitPlayer istance;
 
@@ -16,6 +19,8 @@ public class PickUpDKitPlayer : MonoBehaviour
     {
         pDNAKit.SetActive(false);
         tampone.SetActive(false);
+        pDNAKit2.SetActive(false);
+        tampone2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,23 +33,33 @@ public class PickUpDKitPlayer : MonoBehaviour
         }
         else if (DKit2.istance.clickOnP)
         {
-            pDNAKit.SetActive(true);
+            pDNAKit2.SetActive(true);
             DKit2.istance.clickOnP = false;
-            Debug.Log("kit 2 player on");
         }
 
         if (macchia1.istance.clickOn)
         {
             tampone.SetActive(true);
         }
-        else if (macchia2.istance.clickOn)
+        if (macchia2.istance.clickOn)
         {
-            tampone.SetActive(true);
+            tampone2.SetActive(true);
         }
         if (giraProvette.istance.clickOn)
         {
-            pDNAKit.SetActive(false);
-            tampone.SetActive(false);
+            if(pDNAKit.activeSelf)
+            {
+                pDNAKit.SetActive(false);
+                tampone.SetActive(false);
+                giraProvette.istance.clickOn = false;
+            }
+            else if (pDNAKit2.activeSelf)
+            {
+                pDNAKit2.SetActive(false);
+                tampone2.SetActive(false);
+                giraProvette.istance.clickOn = false;
+            }
+            
         }
     }
 }

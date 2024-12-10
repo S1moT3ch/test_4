@@ -188,7 +188,7 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P11.istance.clickOn )
         {
             Pp11.SetActive(true);
-            
+            pezzo = 11;
             if (qP11.istance.clickOn)
             {
                 Pp11.SetActive(false);
@@ -199,6 +199,7 @@ public class PickUpTetrisPlayer : MonoBehaviour
         else if (P12.istance.clickOn )
         {
             Pp12.SetActive(true);
+            pezzo = 12;
             if (qP12.istance.clickOn)
             {
                 Pp12.SetActive(false);
