@@ -47,13 +47,13 @@ public class PickUpDKitPlayer : MonoBehaviour
         }
         if (giraProvette.istance.clickOn)
         {
-            if(pDNAKit.activeSelf)
+            if(pDNAKit.activeSelf && tampone.activeSelf)
             {
                 pDNAKit.SetActive(false);
                 tampone.SetActive(false);
                 giraProvette.istance.clickOn = false;
             }
-            else if (pDNAKit2.activeSelf)
+            else if (pDNAKit2.activeSelf && tampone.activeSelf)
             {
                 pDNAKit2.SetActive(false);
                 tampone2.SetActive(false);

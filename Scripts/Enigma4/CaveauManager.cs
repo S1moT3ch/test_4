@@ -3,19 +3,15 @@ using UnityEngine;
 public class CaveauManager : MonoBehaviour
 {
     public static CaveauManager istance;
-    public bool adx = false;
+    public bool adx = false; //variabili booleane per gestire i gruppi di rotazioni a dx o a sx
     public bool bsx = false;
     public bool cdx = false;
     public bool dsx = false;
 
-    private int aadx = 0;
+    private int aadx = 0; //variabili per gestire ogni singola rotazione 
     private int basx = 0;
     private int cadx = 0;
     private int dasx = 0;
-    private bool a = false;
-    private bool b = false;
-    private bool c = false;
-    private bool d = false;
 
     public GameObject porta;
 
@@ -34,35 +30,35 @@ public class CaveauManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (aadx == 1)
-            adx = true;
+        if (aadx == 1) //se si gira la prima volta a destra per 1 volta
+            adx = true; //aggiorna la relativa variabile
         else
-            adx = false;
+            adx = false; //altrimenti la variabile deve rimanere falsa
 
-        if (cadx == 3)
-            cdx = true;
+        if (cadx == 3)  //se si gira la terza volta a destra per 3 volte
+            cdx = true; //aggiorna la relativa variabile
         else
-            cdx = false;
+            cdx = false; //altrimenti la variabile deve rimanere falsa
 
-        if (basx == 2)
-            bsx = true;
+        if (basx == 2) //se si gira la seconda volta a destra per 2 volte
+            bsx = true; // //aggiorna la relativa variabile
         else
-            bsx = false;
+            bsx = false; //altrimenti la variabile deve rimanere falsa
 
-        if (dasx ==1)
-            dsx = true;
+        if (dasx == 1)  //se si gira la quarta volta a sinistra per 1 volta
+            dsx = true; //aggiorna la relativa variabile
         else
-            dsx = false;
+            dsx = false; //altrimenti la variabile deve rimanere falsa
 
-        if (adx && bsx && cdx && dsx)
+        if (adx && bsx && cdx && dsx) //se sono state effettuate correttamente nel giusto ordine tutte le rotazioni
         {
-            if (porta == null)
+            if (porta == null) //passaggio necessarionper gestire il caso in cui il Caveau sia stato già aperto
             {
                 Debug.Log("Caveau già aperto");
             }
             else
             {
-                Destroy(porta);
+                Destroy(porta); //altrimenti distruggi la porta del caveau
             }
         }
 
@@ -70,17 +66,17 @@ public class CaveauManager : MonoBehaviour
 
     public void UpdateDx(int volte)
     {
-        if (adx == false && bsx == false && cdx == false && dsx == false)
+        if (adx == false && bsx == false && cdx == false && dsx == false) //se si clicca la prima volta a destra
             {
-            aadx = aadx + volte;
+            aadx = aadx + volte; //aggiorna la variabile relativa
             Debug.Log("1 click prima volta a dx");
             }
-        else if (adx  && bsx && cdx == false && dsx == false)
+        else if (adx  && bsx && cdx == false && dsx == false) //altrimenti se si clicca la terza volta a destra
         {
-            cadx = cadx + volte;
+            cadx = cadx + volte; //aggiorna la variabile relativa
             Debug.Log("1 click terza volta a dx");
         }
-        else if (adx  && bsx && cdx && dsx == false)
+        else if (adx  && bsx && cdx && dsx == false) //se non si segue l'ordine stabilito, viene resettata tutta la procedura già fatta per aprire la porta 
         {
             aadx = 0;
             adx = false;
@@ -94,12 +90,12 @@ public class CaveauManager : MonoBehaviour
 
     public void UpdateSx(int volte)
     {
-        if (adx && bsx == false && cdx == false && dsx == false)
+        if (adx && bsx == false && cdx == false && dsx == false) //se si clicca la prima volta a sx
         {
-            basx = basx + volte;
+            basx = basx + volte; //aggiorna la variabile relativa
             Debug.Log("1 click seconda volta a sx");
         }
-        else if (adx && bsx && cdx == false && dsx == false)
+        else if (adx && bsx && cdx == false && dsx == false) //altrimenti se non si segue l'ordine stabilito, viene resettata tutta la procedura già fatta per aprire la porta
         {
             aadx = 0;
             adx = false;
@@ -107,9 +103,9 @@ public class CaveauManager : MonoBehaviour
             bsx = false;
             Debug.Log("reset");
         }
-        else if (adx && bsx && cdx && dsx == false)
+        else if (adx && bsx && cdx && dsx == false) //altrimenti se si clicca la quarta volta a sinistra
         {
-            dasx = dasx + volte;
+            dasx = dasx + volte; //aggiorna la variabile relativa
             Debug.Log("1 click quarta volta a sx");
         }
     }

@@ -8,9 +8,6 @@ public class PauseButton : MonoBehaviour {
     public GameObject RoomMenu; // Assign in inspector
     public GameObject layout;
     public GameObject pauseStart;
-    public EventSystem eventSystemPause;
-    public EventSystem eventSystemPlay;
-    private bool isShowing = false;
 
     void Start()
     {
@@ -21,9 +18,5 @@ public class PauseButton : MonoBehaviour {
         pauseStart.SetActive(false);
         RoomMenu.SetActive(true);
         layout.SetActive(true);
-        eventSystemPause.enabled = false;
-        eventSystemPlay.enabled = true;
-        
-        
     }
 }

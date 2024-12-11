@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class NumbersOnMonitor : MonoBehaviour
+public class NumbersOnMonitor : MonoBehaviour //nella cartella si trova un analogo script per un altro monitor analogo a questo
 {
    
     public TextMeshProUGUI testo;
@@ -14,15 +14,15 @@ public class NumbersOnMonitor : MonoBehaviour
 
     void Awake()
     {
-        istance=this;
+        istance=this; //creazione istanza per condividere le variabili e i metodi di questa classe in altri script
     }
 
 
     public void UpdateCodice(string valore)
     {
-        if (PlayerMonitor.istance.isMonitor == true)
+        if (PlayerMonitor.istance.isMonitor == true) //se il player sta guardando il monitor
         {
-            if (codice.Length == 23)
+            if (codice.Length == 23) //se lo schermo contiene troppi caratteri, cancella ciò che c'è scritto
             {
                 testo.text = reset;
                 codice = reset + valore;
@@ -37,7 +37,7 @@ public class NumbersOnMonitor : MonoBehaviour
             }
         }
     }
-    public void CancellaCarattere()
+    public void CancellaCarattere() //metodo per cancellare il carattere sul monitor
     {
         if (PlayerMonitor.istance.isMonitor == true)
         {
