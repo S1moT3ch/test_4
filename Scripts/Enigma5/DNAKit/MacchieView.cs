@@ -14,7 +14,8 @@ public class MacchieView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerDnaKit.istance.isBlood1 && OnOffTorcia.istance.on == 2)
+        
+        if (PlayerDnaKit.istance.isBlood1 == true && OnOffTorcia.istance.on == 2)
         {
             macchia1.SetActive(true);
         }

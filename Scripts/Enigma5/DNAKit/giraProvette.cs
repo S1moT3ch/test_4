@@ -3,6 +3,7 @@ using UnityEngine;
 public class giraProvette : MonoBehaviour
 {
     public bool clickOn = false;
+    public bool clickOnA = false;
 
     public static giraProvette istance;
 
@@ -24,5 +25,6 @@ public class giraProvette : MonoBehaviour
 
     void OnMouseDown(){
         clickOn = true;
+        clickOnA = true;
     }
 }

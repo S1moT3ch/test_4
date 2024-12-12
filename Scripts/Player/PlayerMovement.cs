@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private Alteruna.Avatar _avatar;
     float horizontalInput;
     float verticalInput;
+    public bool cammina = false;
+    public static PlayerMovement istance;
 
     Vector3 moveDirection;
 
@@ -32,18 +34,17 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _avatar = GetComponent<Alteruna.Avatar>();
-        
-        //if (!_avatar.IsMe)
-            //return;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
 
+    void Awake()
+    {
+        istance=this;
+    }
+
     private void Update()
     {
-
-        //if (!_avatar.IsMe)
-            //return;
             grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         
             MyInput();
@@ -77,12 +78,12 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection =orientation.forward*verticalInput + orientation.right * horizontalInput;
-        if (PlayerMonitor.istance.isMonitor | ChatView.istance.isShowing) //se il player sta guardando il monitor o la chat è aperta, blocca la posizione della player
+        if (PlayerMonitor.istance.isMonitor | ChatView.istance.isShowing) //se il player sta guardando il monitor o la chat è aperta, blocca la posizione del player
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
             rb.freezeRotation = true;
         }
-        else //altrimenti sblocca la posizione e muovi il player
+        else //altrimenti sblocca la posizione e muovi il player aggiornando le variabili relative alle animazioni del player stesso
         {
             Debug.Log("movimento");
             rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
@@ -91,10 +92,22 @@ public class PlayerMovement : MonoBehaviour
             rb.freezeRotation = true;
             
             if(grounded)
+            {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
+            }
             else if (!grounded)
+            {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f * jumpForce, ForceMode.Force);
+            }
+
+            if(rb.linearVelocity.magnitude < 0.01f)
+            {
+                cammina = false;
+            }
+            else
+            {
+                cammina = true;
+            }
         }
     }
 

@@ -3,13 +3,14 @@ using UnityEngine;
 public class PlayerDnaKit : MonoBehaviour
 {
     public float pickUpRange = 100f;
-    public bool isBlood1 = false;
-    public bool isBlood2 = false;
+    public bool isBlood1;
+    public bool isBlood2;
     public static PlayerDnaKit istance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        isBlood1 = false;
+        isBlood2 = false;
     }
 
     void Awake()
@@ -23,19 +24,19 @@ public class PlayerDnaKit : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange) && hit.transform.gameObject.tag == "sangue1")
         {
-            //update variable
             isBlood1 = true;
         } 
         else
-            //update variable
+        {
             isBlood1 = false;
+        }
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange) && hit.transform.gameObject.tag == "sangue2")
         {
-            //update variable
             isBlood2 = true;
         } 
         else
-            //update variable
+        {
             isBlood2 = false;
+        }
     }
 }
