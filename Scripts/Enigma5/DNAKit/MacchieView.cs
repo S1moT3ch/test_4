@@ -2,52 +2,52 @@ using UnityEngine;
 
 public class MacchieView : MonoBehaviour
 {
-    public GameObject macchia1;
-    public GameObject macchia2;
+    public bool m1;
+    public bool m2;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        macchia1.SetActive(false);
-        macchia2.SetActive(false);
+
     }
 
+    
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() //se il player sta guardando la macchia n ed è accesa la torcia sul colore UV, aggiorna la relativa variabile per la corrispondente macchia di sangue, altrimenti mantieni falsa la variabile
+    {        
         if (PlayerDnaKit.istance.isBlood1 == true && OnOffTorcia.istance.on == 2)
         {
-            macchia1.SetActive(true);
+            MacchieHide.istance.m1 = true;
         }
         else if (PlayerDnaKit.istance.isBlood1 == false && OnOffTorcia.istance.on != 2)
         {
-            macchia1.SetActive(false);
+            MacchieHide.istance.m1 = false;
 
             if (PlayerDnaKit.istance.isBlood2 && OnOffTorcia.istance.on == 2)
             {
-                macchia2.SetActive(true);
+                MacchieHide.istance.m2 = true;
             }
             else if (PlayerDnaKit.istance.isBlood2 == false && OnOffTorcia.istance.on != 2)
             {
-                macchia2.SetActive(false);
+                MacchieHide.istance.m2 = false;
             }
         }
 
         else if (PlayerDnaKit.istance.isBlood2 && OnOffTorcia.istance.on == 2)
         {
-            macchia2.SetActive(true);
+           MacchieHide.istance.m2 = true;
         }
         else if (PlayerDnaKit.istance.isBlood2 == false && OnOffTorcia.istance.on != 2)
         {
-            macchia2.SetActive(false);
+            MacchieHide.istance.m2 = false;
 
             if (PlayerDnaKit.istance.isBlood1 && OnOffTorcia.istance.on == 1)
             {
-                macchia1.SetActive(true);
+                MacchieHide.istance.m1 = true;
             }
-            else if (PlayerDnaKit.istance.isBlood1 == false && OnOffTorcia.istance.on != 1)
+            else if (PlayerDnaKit.istance.isBlood1 == false && OnOffTorcia.istance.on != 2)
             {
-                macchia1.SetActive(false);
+                MacchieHide.istance.m1 = false;
             }
         }
     }

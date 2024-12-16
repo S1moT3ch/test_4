@@ -15,6 +15,8 @@ public class PlayerDnaKit : MonoBehaviour
 
     void Awake()
     {
+        isBlood1 = false;
+        isBlood2 = false;
         istance=this;
     }
 
