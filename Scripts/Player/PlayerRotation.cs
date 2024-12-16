@@ -28,7 +28,7 @@ public class PlayerRotation : MonoBehaviour
 
             yRotation += mouseX;
         
-            transform.rotation = Quaternion.Euler(0, yRotation, 0);
+            transform.rotation = Quaternion.Euler(0, yRotation + 180, 0);
         }
     }
 }

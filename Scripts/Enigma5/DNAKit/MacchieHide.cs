@@ -28,33 +28,33 @@ public class MacchieHide : MonoBehaviour
         {
             macchia1.SetActive(true);
         }
-        else if (m1 = false)
+        else if (m1 == false)
         {
             macchia1.SetActive(false);
 
-            if (m2 = true)
+            if (m2 == true)
             {
                 macchia2.SetActive(true);
             }
-            else if (m2 = false)
+            else if (m2 == false)
             {
                 macchia2.SetActive(false);
             }
         }
 
-        else if (m2 = true)
+        if (m2 == true)
         {
             macchia2.SetActive(true);
         }
-        else if (m2 = false)
+        else if (m2 == false)
         {
             macchia2.SetActive(false);
 
-            if (m1 = true)
+            if (m1 == true)
             {
                 macchia1.SetActive(true);
             }
-            else if (m1 = false)
+            else if (m1 == false)
             {
                 macchia1.SetActive(false);
             }

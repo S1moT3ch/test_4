@@ -19,7 +19,7 @@ public class MacchieView : MonoBehaviour
         {
             MacchieHide.istance.m1 = true;
         }
-        else if (PlayerDnaKit.istance.isBlood1 == false && OnOffTorcia.istance.on != 2)
+        else if (PlayerDnaKit.istance.isBlood1 == false && OnOffTorcia.istance.on != 2) 
         {
             MacchieHide.istance.m1 = false;
 

@@ -20,7 +20,7 @@ public class GpAnim : MonoBehaviour
         else
         {
             animator.SetBool("apriGiraP", true);
-            animator.SetBool("apriGiraP", false);
+            //animator.SetBool("apriGiraP", false);
         }
     }
 }

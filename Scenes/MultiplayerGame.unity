@@ -9796,7 +9796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8b1cf91e6160f514ab5265280008cc63, type: 3}
       propertyPath: m_TagString
-      value: sangue
+      value: sangue2
       objectReference: {fileID: 0}
     - target: {fileID: 4052214654972255875, guid: 8b1cf91e6160f514ab5265280008cc63, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -24004,7 +24004,7 @@ Transform:
   m_GameObject: {fileID: 1375737368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67.79, y: 2.97, z: 189.47}
+  m_LocalPosition: {x: 60.84, y: 2.97, z: 132.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32437,6 +32437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickOn: 0
+  clickOnP: 0
 --- !u!65 &1852600532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32457,7 +32458,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.41, y: 0.42, z: 0.3}
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Center: {x: 0, y: 0.25, z: -0.03}
 --- !u!1 &1861258627 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8009987137999418058, guid: 8a564c1480fe13f41b243da9444791f0, type: 3}
@@ -37061,7 +37062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8b1cf91e6160f514ab5265280008cc63, type: 3}
       propertyPath: m_TagString
-      value: sangue
+      value: sangue1
       objectReference: {fileID: 0}
     - target: {fileID: 4052214654972255875, guid: 8b1cf91e6160f514ab5265280008cc63, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -37100,6 +37101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickOn: 0
+  clickOnP: 0
 --- !u!65 &2089303021
 BoxCollider:
   m_ObjectHideFlags: 0

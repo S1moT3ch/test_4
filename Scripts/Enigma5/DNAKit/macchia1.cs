@@ -3,6 +3,7 @@ using UnityEngine;
 public class macchia1 : MonoBehaviour
 {
     public bool clickOn = false;
+    public bool clickOnP = false;
     public static macchia1 istance;
 
     void Awake()
@@ -23,5 +24,6 @@ public class macchia1 : MonoBehaviour
 
     void OnMouseDown(){
         clickOn = true;
+        clickOnP = true;
     }
 }

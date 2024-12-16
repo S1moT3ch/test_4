@@ -37,7 +37,7 @@ public class PickUpDKitPlayer : MonoBehaviour
             DKit2.istance.clickOnP = false;
         }
 
-        if (macchia1.istance.clickOn)
+        if (macchia1.istance.clickOnP)
         {
             tampone.SetActive(true);
         }
@@ -52,12 +52,14 @@ public class PickUpDKitPlayer : MonoBehaviour
                 pDNAKit.SetActive(false);
                 tampone.SetActive(false);
                 giraProvette.istance.clickOn = false;
+                macchia1.istance.clickOnP = false;
             }
             else if (pDNAKit2.activeSelf && tampone.activeSelf)
             {
                 pDNAKit2.SetActive(false);
                 tampone2.SetActive(false);
                 giraProvette.istance.clickOn = false;
+                macchia2.istance.clickOnP = false;
             }
             
         }
